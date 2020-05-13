@@ -21,4 +21,6 @@ Rails.application.routes.draw do
   end
   
   resources :relationships, only: [:create, :destroy]
+  
+  get "favorites", to: "favorites#index"
 end
