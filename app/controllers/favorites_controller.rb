@@ -1,8 +1,5 @@
 class FavoritesController < ApplicationController
   before_action :require_user_logged_in
-  def index
-    @favorite_posts = current_user.feed_favorite_posts.order(id: :desc).page(params[:page])
-  end
   
   def create
     post = Micropost.find(params[:micropost_id])
