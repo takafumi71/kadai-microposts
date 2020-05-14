@@ -22,5 +22,5 @@ Rails.application.routes.draw do
   
   resources :relationships, only: [:create, :destroy]
   
-  get "favorites", to: "favorites#index"
+  resources :favorites, only: [:create, :destroy]
 end

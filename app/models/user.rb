@@ -42,12 +42,8 @@ class User < ApplicationRecord
     favorite.destroy if favorite
   end
   
-  def favorite?(other_post)
-    self.add_favorites.include?(other_post)
-  end
-  
-  def feed_favorite_posts
-    Micropost.where(user_id: self.add_favorite_posts.ids)
+  def add_favorite?(other_post)
+    self.add_favorite_posts.include?(other_post)
   end
     
 end
