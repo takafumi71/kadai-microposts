@@ -38,14 +38,10 @@ class UsersController < ApplicationController
     counts(@user)
   end
   
-  def likes_nav
-    @user = User.find(params[:id])
-    @likes = @user.likes.page(params[:page])
-    counts(@user)
-  end
-  
   def likes
+    @user = User.find(params[:id])
     @likes = current_user.likes.order(id: :desc).page(params[:page])
+    counts(@user) 
   end
     
     
