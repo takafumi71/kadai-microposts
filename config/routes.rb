@@ -10,8 +10,8 @@ Rails.application.routes.draw do
     member do
       get :followings
       get :followers
+      get :likes_nav
       get :likes
-      get :like_posts
     end
   end
   
